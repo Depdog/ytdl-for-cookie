@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 from pytube import YouTube
 
-app = Flask('app')
+app = Flask(__name__)
 
 
 @app.route('/', methods=['GET'])
@@ -27,4 +27,5 @@ def get_data_from_html():
   """
 
 
-app.run(host='0.0.0.0', port=8080)
+if __name__ == '__main__':
+    app.run()
